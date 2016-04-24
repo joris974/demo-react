@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+    <script src="vendor/react.js"></script>
+    <script src="vendor/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+
+    <script type="text/babel">
+      var Hello = React.createClass({
+        render: function() {
+          return <h1>Hello {this.props.name}</h1>;
+        }
+      });
+    </script>
+
+    <script type="text/javascript">
+      var Hello2 = React.createClass({
+        render: function() {
+          return React.createElement("h1", null, "Remove JSX from ", this.props.name);
+        }
+      });
+    </script>
+
+    <script type="text/babel">
+      ReactDOM.render(
+        <Hello name="World" />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
